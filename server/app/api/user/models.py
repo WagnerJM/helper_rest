@@ -1,6 +1,7 @@
 import bcrypt
 from app.database import BaseMixin, db
 from sqlalchemy.dialects.postgresql import JSON
+from app.api.lebenslauf.models import Lebenslauf
 
 
 class User(BaseMixin, db.Model):
@@ -19,6 +20,7 @@ class User(BaseMixin, db.Model):
 
     profil = db.relationship('Profile', backref='User', lazy=False)
     email_setting = db.relationship('EmailSetting', backref='User', lazy=False)
+    lebenslauf = db.relationship('Lebenslauf', backref='User', lazy=False)
 
 
     def __init__(self, username, password):

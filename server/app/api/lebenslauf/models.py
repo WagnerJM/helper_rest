@@ -8,6 +8,7 @@ class Lebenslauf(BaseMixin, db.Model):
     taetigkeiten = db.relationship('Taetigkeit', backref='Lebenslauf', lazy=False)
     fortbildungen = db.relationship('Fortbildung', backref='Lebenslauf', lazy=False)
     qualifikationen = db.relationship('Qualifikation', backref='Lebenslauf', lazy=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.userID'))
 
 
     def json(self):

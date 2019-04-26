@@ -8,3 +8,4 @@ def str2uuid(string):
     return UUID(string)
 
 class ResourceMixin(object):
+    pass
